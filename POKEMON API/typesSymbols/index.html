@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon API - Thani y Juan Diego</title>
+    <link rel="stylesheet" href="../styles/style.css"> <!-- Enlace al archivo CSS -->
+    <script src="../javascript/pokemonjs.js" defer></script> <!-- Enlace al archivo JS -->
+</head>
+
+<body>
+    <header>
+        <img src="../images/fontbolt.png" alt="Pokemon">
+    </header>
+    <main>
+        <br>
+        <label for="equipo" id="equipoLabel">MONTAR TU EQUIPO</label>
+        <br>
+        <form action="equipo.html">
+            <br>
+            <label for="teamName">Nombre de tu equipo: </label>
+            <input type="text" name="teamName" id="teamName" required>
+            <br>
+            <br>
+            <input type="submit" value="-- Monta tu equipo soñado --" name="equipo" id="equipo">
+        </form>
+        <br>
+        <br>
+        <br>
+        <label for="pokemon" id="pokemonLabel">Selecciona un tipo de Pokemon: </label>
+        <select name="pokemon" id="pokemon">
+            <option value="">Selecciona un tipo</option>
+        </select>
+        <p id="pokeAviso"><---------------- Pokemon variocolor | Pokemon normal -----------------></p>
+        <p id="pokeCount">Pokemon mostrados: <span id="pokemonCount">0</span></p>
+        <ul id="pokemonList">
+        </ul>
+    </main>
+
+    <footer>
+        <p>Hecho por Thani, Juan Diego y Asier &copy; 2025</p>
+    </footer>
+</body>
+
+</html>

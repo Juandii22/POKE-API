@@ -8,16 +8,261 @@
 
 @font-face {
   /*Fuente de texto para el titulo (opcion 2)*/
-  font-family: 'PokemonStyle';
+  font-family: 'PokemonStyle2';
   src: url('../fonts/Pokemon Solid.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-#title {
-  font-family: 'PokemonStyle';
-  color: #FFDE00;
+@font-face {
+  /*Fuente de texto para el titulo (opcion 3)*/
+  font-family: 'PokemonStyle3';
+  src: url('../fonts/Pokemon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  font-size: 80px;
+@font-face {
+  /*Fuente de texto para el titulo (opcion 4)*/
+  font-family: 'PokemonStyle4';
+  src: url('../fonts/LmsPokemonMasterOutline-dn1g.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+html {
   text-align: center;
+  /* NUEVOS ESTILOS POKÉMON (Añadidos) */
+  background-color: #f0f0f0;
+  /* Fondo gris claro, típico de interfaz */
+}
+
+/* Estilo para el contenedor principal de la Pokédex */
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  /* Fondo blanco para el contenido */
+  border: 10px solid #cc0000;
+  /* Borde rojo Pokédex */
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+header img {
+  max-width: 400px;
+}
+
+#pokemon {
+  margin-bottom: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #3b4cca;
+  /* Borde azul Pokédex */
+}
+
+#pokemonLabel {
+  font-family: 'PokemonStyle2';
+  font-size: 24px;
+}
+
+#equipoLabel {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#pokeCount {
+  font-family: 'PokemonStyle2';
+}
+
+#pokeAviso {
+  font-family: 'PokemonStyle2';
+  font-size: 16px;
+}
+
+#pokemonList {
+  list-style-type: none;
+  max-width: 100%;
+  /* Ajustado a 100% del main */
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+}
+
+.pokemoncard {
+  /* Estilo base de la tarjeta */
+  border: 4px solid #356abc;
+  /* Borde azul fuerte para la tarjeta */
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  /* Reducido un poco para mejor lectura */
+  background-color: #ffffffb7;
+  /* Fondo ligeramente gris para contraste */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra inicial sutil */
+}
+
+.pokemoncard:hover {
+  transform: scale(1.03);
+  /* Menos agresivo que 1.05 */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  /* Sombra más fuerte al pasar el ratón */
+  border-color: #ffcc03;
+  /* Resalta el borde en rojo al hacer hover */
+}
+
+.imgpoke {
+  max-width: 150px;
+  /* Reducido el tamaño máximo para mejor grid */
+  image-rendering: pixelated;
+  /* Si tienes imágenes pixeladas, esto ayuda */
+}
+
+.type {
+  max-width: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 41px;
+  border-radius: 50%;
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #333;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos de los colores de fondo de los tipos (se mantienen igual, son perfectos) */
+
+#normal {
+  background-color: #bfb16e;
+}
+
+#fighting {
+  background-color: #cf5c35;
+}
+
+#flying {
+  background-color: #bea0c2;
+}
+
+#poison {
+  background-color: #b96889;
+}
+
+#ground {
+  background-color: #e6c163;
+}
+
+#rock {
+  background-color: #c9ab40;
+}
+
+#bug {
+  background-color: #bebb30;
+}
+
+#ghost {
+  background-color: #987984;
+}
+
+#steel {
+  background-color: #cabbac;
+}
+
+#fire {
+  background-color: #f2953b;
+}
+
+#water {
+  background-color: #92a0c2;
+}
+
+#grass {
+  background-color: #9dc652;
+}
+
+#electric {
+  background-color: #f7cd3b;
+}
+
+#psychic {
+  background-color: #f77979;
+}
+
+#ice {
+  background-color: #b4d2b1;
+}
+
+#dragon {
+  background-color: #a172bf;
+}
+
+#dark {
+  background-color: #98794c;
+}
+
+#fairy {
+  background-color: #f0a692;
+}
+
+#unknown {
+  background-color: rgba(255, 202, 142, 0.7);
+}
+
+#shadow {
+  background-color: rgba(42, 78, 141, 0.7);
+}
+
+/* Nuevos estilos para el formulario y botones */
+
+#equipo {
+  color: #cc0000;
+  border-color: #cc0000;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 18px;
+}
+
+#equipo:hover {
+  background-color: #cc0000;
+  color: white;
+  border-color: white;
+}
+
+
+/* Estilo para los selectores de movimientos dentro de la tarjeta */
+.pokemoncard select {
+  padding: 5px;
+  margin-top: 10px;
+  border: 2px solid #555;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Estilos del pie de página */
+footer {
+  margin-top: 40px;
+  padding: 10px;
+  background-color: #cc0000;
+  /* Rojo */
+  color: white;
+  font-size: 14px;
+  border-top: 5px solid #3b4cca;
+  /* Borde azul */
 }
