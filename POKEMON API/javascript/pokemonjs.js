@@ -1,7 +1,12 @@
 const pokemonSelect = document.getElementById("pokemon");
 const pokemonList = document.getElementById("pokemonList");
 const pokemonCount = document.getElementById("pokemonCount");
+const pokeBody = document.getElementById("pokeBody");
 let pokecount = 0;
+
+function capitalizeFirstLetter(text) { // funcion para que en los títulos sean capitalizados (ej: Juan, Pepe)
+    return text.charAt(0).toUpperCase() + text.slice(1);
+}
 
 fetch('https://pokeapi.co/api/v2/type')
     .then(response => response.json())
@@ -20,6 +25,7 @@ pokemonSelect.addEventListener("change", () => {
                 insertPokemon(pokemon);
             });
         });
+    pokeBody.style.backgroundImage = "../images/" + pokemonSelect.value + ".gif";
 });
 
 function insertPokemon(pokemones) {
@@ -32,9 +38,7 @@ function insertPokemon(pokemones) {
             pokecount++;
             pokemonCount.textContent = pokecount;
             pokeType = data.types.map(type => type.type.name).join(", ");
-            console.log(pokeType);
             poketypeArray = pokeType.split(", ");
-            console.log(poketypeArray);
 
             li.classList.add("pokemoncard");
             li.innerHTML = `
@@ -68,8 +72,4 @@ function insertType(type) { //función para insertar el tipo en el select
     option.value = type.name;
     option.textContent = capitalizeFirstLetter(type.name);
     pokemonSelect.appendChild(option);
-}
-
-function capitalizeFirstLetter(text) { // funcion para que en los títulos sean capitalizados (ej: Juan, Pepe)
-    return text.charAt(0).toUpperCase() + text.slice(1);
 }
